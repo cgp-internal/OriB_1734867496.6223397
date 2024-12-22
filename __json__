@@ -1,0 +1,55 @@
+{
+    "helpers.py": {
+        "description": "ArUco marker generator and detector functionality",
+        "dependencies": {
+            "numpy": [
+                "np"
+            ],
+            "cv2": [
+                "cv2"
+            ]
+        },
+        "exposes": [
+            "_generate",
+            "_detect"
+        ]
+    },
+    "app.py": {
+        "description": " Flask application for generating and detecting ARUCO markers",
+        "dependencies": {
+            "./helpers.py": [
+                "_generate",
+                "_detect"
+            ]
+        },
+        "exposes": [
+            "home",
+            "generate",
+            "detect",
+            "app"
+        ]
+    },
+    "requirements.txt": {
+        "description": "",
+        "dependencies": {},
+        "exposes": []
+    },
+    "templates/index.html": {
+        "description": "HTML template for Aruco Generator/Decoder",
+        "dependencies": {
+            "static/style.css": [],
+            "static/script.js": []
+        },
+        "exposes": []
+    },
+    "static/style.css": {
+        "description": "Stylesheet for the web application",
+        "dependencies": {},
+        "exposes": []
+    },
+    "static/script.js": {
+        "description": "JavaScript code for handling upload and generate form submissions",
+        "dependencies": {},
+        "exposes": []
+    }
+}
